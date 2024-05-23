@@ -1,5 +1,4 @@
 const authModel = require('../model/auth.model')
-// const session = require('express-session')
 
 exports.registerUser = (req, res) => {
     authModel.insertUser(req.body, (err, result) => {
