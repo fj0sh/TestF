@@ -1,15 +1,14 @@
 "use client";
 import useAccounts from "@/hooks/useAccounts";
 import React, { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const Home = () => {
-  const { userData } = useAccounts();
+  const router = useRouter();
 
-  useEffect(() => {
-    console.log(userData);
-  }, [userData]);
+  router.push("/login");
 
-  return <div>{}</div>;
+  return <div></div>;
 };
 
 export default Home;
