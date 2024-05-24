@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Accounts from '@/interface/accounts';
 
-const req =  axios.create({baseURL:"http://localhost:8081/auth"})
+const req =  axios.create({baseURL: process.env.URL})
 
 const useAccounts = () => {
     const [userData, setUserData] = useState<Accounts[]>();
@@ -41,6 +41,7 @@ const useAccounts = () => {
 
     useEffect(() => {
         displayUsers();
+        console.log(process.env.URL);
     }, []);
  
     return{userData, displayUsers, registerAccount, loginAccount, status};
