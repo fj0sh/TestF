@@ -2,7 +2,7 @@ const conn  = require("../config/dbconfig");
 
 exports.insertUser = (credentials, callback) => {
     const {username, password, first_name, last_name} = credentials;
-    conn.query("insert into accounts (username, password, first_name, last_name) values (?,?,?,?)", [username, password, first_name, last_name], callback)
+    conn.query("insert into accounts (username, password, firstname, lastname) values (?,?,?,?)", [username, password, first_name, last_name], callback)
 }
 
 exports.loginUser = (credentials, callback) => {
